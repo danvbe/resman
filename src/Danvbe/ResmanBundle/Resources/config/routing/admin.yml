@@ -1,0 +1,19 @@
+danvbe_resman_admin_test:
+    pattern: /test
+    defaults: { _controller: DanvbeResmanBundle:Admin:test}
+
+danvbe_resman_admin_resource_type_list:
+    pattern: /resource_type/list
+    defaults: { _controller: DanvbeResmanBundle:Admin:listResourceType}
+
+danvbe_resman_admin_resource_type_form:
+    pattern: /resource_type
+    defaults: { _controller: DanvbeResmanBundle:Admin:formResourceType}
+
+danvbe_resman_admin_resource_type_show:
+    pattern: /resource_type/show/{id}
+    defaults: { _controller: DanvbeResmanBundle:Admin:showResourceType}
+
+danvbe_resman_admin_property_type_form:
+    pattern: /property_type
+    defaults: { _controller: DanvbeResmanBundle:Admin:formPropertyType}

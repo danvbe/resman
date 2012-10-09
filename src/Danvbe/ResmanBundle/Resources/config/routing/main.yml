@@ -1,0 +1,3 @@
+danvbe_resman_main_home:
+    pattern: /home
+    defaults: { _controller: DanvbeResmanBundle:Main:home}

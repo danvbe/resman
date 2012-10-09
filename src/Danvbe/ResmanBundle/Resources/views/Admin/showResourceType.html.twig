@@ -1,0 +1,14 @@
+{% extends 'DanvbeResmanBundle::base.html.twig' %}
+
+{% block body %}
+<h2>Tip resursa: {{ resource_type.name }}</h2>
+<ul>
+    <li>
+        Identificator:
+        {% if (identification) %}
+        {% else %}
+                <a href="{{ path('danvbe_resman_admin_property_type_form',{'resource_type_id':resource_type.id}) }}" class="readmore">Adauga identificator</a>
+        {% endif %}
+    </li>
+</ul>
+{% endblock %}

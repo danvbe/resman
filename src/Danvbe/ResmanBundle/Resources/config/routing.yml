@@ -1,3 +1,7 @@
-danvbe_resman_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: DanvbeResmanBundle:Default:index }
+danvbe_resman_admin:
+    resource: "@DanvbeResmanBundle/Resources/config/routing/admin.yml"
+    prefix: /admin
+
+danvbe_resman_main:
+    resource: "@DanvbeResmanBundle/Resources/config/routing/main.yml"
+    prefix: /

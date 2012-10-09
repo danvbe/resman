@@ -1,0 +1,12 @@
+{% extends 'DanvbeResmanBundle::base.html.twig' %}
+
+{% block body %}
+<h3>Formular adaugare tip de resursa</h3>
+<form action="{{ path('danvbe_resman_admin_resource_type_form') }}" method="post" {{ form_enctype(form) }}>
+    <p>
+        {{ form_widget(form) }}
+        <br />
+        <input class="button" type="submit" value="Salveaza"/>
+    </p>
+</form>
+{% endblock %}

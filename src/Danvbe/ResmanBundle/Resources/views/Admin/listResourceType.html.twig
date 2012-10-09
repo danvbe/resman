@@ -1,0 +1,15 @@
+{% extends 'DanvbeResmanBundle::base.html.twig' %}
+
+{% block body %}
+<h2>Lista tipuri de resurse</h2>
+<ol>
+{% for resource_type in resource_types %}
+    <li>
+        <a href="{{ path('danvbe_resman_admin_resource_type_show',{'id':resource_type.id}) }}">{{ resource_type.name }}</a>
+    </li>
+{% endfor %}
+</ol>
+<p class="post-footer">
+    <a href="{{ path('danvbe_resman_admin_resource_type_form') }}" class="readmore">Adauga tip de resursa</a>
+</p>
+{% endblock %}

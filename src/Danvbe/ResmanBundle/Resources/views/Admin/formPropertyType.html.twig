@@ -1,0 +1,9 @@
+{% extends 'DanvbeResmanBundle:Admin:base.html.twig' %}
+
+{% block body %}
+<form action="{{ path('danvbe_resman_admin_property_type_form') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <br />
+    <input type="submit" class="button" />
+</form>
+{% endblock %}
