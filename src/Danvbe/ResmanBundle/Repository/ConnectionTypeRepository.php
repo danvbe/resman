@@ -38,7 +38,10 @@ class ConnectionTypeRepository extends EntityRepository
             ->setParameter('rt',$rt)
             ->setParameter('type','identification')
             ->getQuery();
-        return $q->getResult();
+
+        $res = $q->getResult();
+
+        return (count($res)>0)?$res[0]:null;
     }
 
 }

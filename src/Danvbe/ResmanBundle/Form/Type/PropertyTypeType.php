@@ -12,6 +12,7 @@ namespace Danvbe\ResmanBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormBuilderInterface;
+use Danvbe\ResmanBundle\Repository\ResourceTypeRepository;
 
 class PropertyTypeType extends AbstractType
 {
@@ -19,11 +20,23 @@ class PropertyTypeType extends AbstractType
     {
         $builder->add('resource_type','entity',array(
             'class' => 'DanvbeResmanBundle:ResourceType',
+            'query_builder' => function(ResourceTypeRepository $er) {
+                return $er->getAllNonPropertiesOrderedByNameQueryBuilder();
+            },
             'property' => 'name',  //property used to render the content of the select
             'required' => true,
             'expanded' => false,
             'multiple' => false,
             'label' => 'Tip de resursa',
+            'read_only' => true,
+        ));
+        $builder->add('type','entity',array(
+            'class' => 'DanvbeResmanBundle:TypeOfConnectionType',
+            'property' => 'type',  //property used to render the content of the select
+            'required' => true,
+            'expanded' => false,
+            'multiple' => false,
+            'label' => 'Tip de conectare',
             'read_only' => true,
         ));
         $builder->add('name','text',array(

@@ -6,8 +6,11 @@
     <li>
         Identificator:
         {% if (identification) %}
+          {% for connected_resource_type in identification.connectedResourceTypes %}
+            {{ connected_resource_type.resourceType.name }}
+          {% endfor %}
         {% else %}
-                <a href="{{ path('danvbe_resman_admin_property_type_form',{'resource_type_id':resource_type.id}) }}" class="readmore">Adauga identificator</a>
+                <a href="{{ path('danvbe_resman_admin_property_type_form',{'resource_type_id':resource_type.id,'type':'identification'}) }}" class="readmore">Adauga identificator</a>
         {% endif %}
     </li>
 </ul>

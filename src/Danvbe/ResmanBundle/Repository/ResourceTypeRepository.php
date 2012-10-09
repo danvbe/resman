@@ -12,10 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class ResourceTypeRepository extends EntityRepository
 {
-    public function findAllOrderedByName(){
+    public function getAllNonPropertiesOrderedByNameQueryBuilder(){
+        $q = $this->createQueryBuilder('rt')
+            ->select('rt')
+            ->where('rt.data_type is null')
+            ->orderBy('rt.name');
 
-        return $this->getEntityManager()
-            ->createQuery('select rt from DanvbeResmanBundle:ResourceType rt order by rt.name')
-            ->getResult();
+        return $q;
     }
 }

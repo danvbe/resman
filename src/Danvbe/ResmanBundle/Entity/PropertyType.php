@@ -29,6 +29,11 @@ class PropertyType
     protected $resource_type;
 
     /**
+     * @var string $type the type of connection (property or identification)
+     */
+    protected $type;
+
+    /**
      * @return string The name of this property type
      */
     public  function getName(){
@@ -75,6 +80,23 @@ class PropertyType
      */
     public function setResourceType($resource_type){
         $this->resource_type = $resource_type;
+
+        return $this;
+    }
+
+    /**
+     * @return int the type id of the connection
+     */
+    public  function getType(){
+        return $this->type;
+    }
+
+    /**
+     * @param int $type the type of the connection
+     * @return PropertyType
+     */
+    public function setType($type){
+        $this->type = $type;
 
         return $this;
     }
